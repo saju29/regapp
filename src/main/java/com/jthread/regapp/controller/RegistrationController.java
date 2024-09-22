@@ -16,7 +16,7 @@ public class RegistrationController extends HttpServlet {
         String name = req.getParameter("name");
         String message = "";
         int age = Integer.parseInt(req.getParameter("age"));
-        if(age<18){
+        if(age<AgeConstant.MIN_AGE){
             message = "You are too young";
         }
         PrintWriter out = resp.getWriter();
