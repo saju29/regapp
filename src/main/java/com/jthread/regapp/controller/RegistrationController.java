@@ -14,7 +14,11 @@ public class RegistrationController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String name = req.getParameter("name");
+        String message = "";
         int age = Integer.parseInt(req.getParameter("age"));
+        if(age<18){
+            message = "You are too young";
+        }
         PrintWriter out = resp.getWriter();
         out.println("<html>");
         out.println("<head>");
@@ -23,7 +27,7 @@ public class RegistrationController extends HttpServlet {
         out.println("<body>");
         out.println("<h1>Registration Page</h1>");
         out.println("<h2>Welcome " + name + "</h2>");
-        out.println("<h2>Your Age is  " + age + "</h2>");
+        out.println("<h2>Your Age is  " + age + "</h2>"+ message);
         out.println("</body>");
         out.println("</html>");
 
