@@ -20,16 +20,29 @@ public class RegistrationController extends HttpServlet {
             message = "You are too young";
         }
         PrintWriter out = resp.getWriter();
-        out.println("<html>");
-        out.println("<head>");
-        out.println("<title>Registration Page</title>");
-        out.println("</head>");
-        out.println("<body>");
-        out.println("<h1>Registration Page</h1>");
-        out.println("<h2>Welcome " + name + "</h2>");
-        out.println("<h2>Your Age is  " + age + "</h2>"+ message);
-        out.println("</body>");
-        out.println("</html>");
+        if("You are too young".equals(message)){
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<title>Registration Page</title>");
+            out.println("</head>");
+            out.println("<body>");
+            out.println("<h1>Registration Page</h1>");
+            out.println("<h2>Welcome " + name + "</h2>");
+            out.println("<h2>Your Age is  " + age + "</h2>" + message);
+            out.println("</body>");
+            out.println("</html>");
 
+        }else {
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<title>Registration Page</title>");
+            out.println("</head>");
+            out.println("<body>");
+            out.println("<h1>Registration Page</h1>");
+            out.println("<h2>Welcome " + name + "</h2>");
+            out.println("<h2>Your Age is  " + age + "</h2>" );
+            out.println("</body>");
+            out.println("</html>");
+        }
     }
 }
